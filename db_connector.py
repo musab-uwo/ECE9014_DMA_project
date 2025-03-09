@@ -27,7 +27,7 @@ def create_connection():
     connection = mysql.connector.connect(
         host="127.0.0.1",  # Replace with your MySQL server address
         user="root",  # Replace with your MySQL username
-        password="titaniumW@TCH56",  # Replace with your MySQL password
+        password="",  # Replace with your MySQL password
         database="financial_data",  # Replace with your MySQL database name
         port=3306,  # Default MySQL port, change if needed
         use_pure=True
