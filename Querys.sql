@@ -1,4 +1,4 @@
-CREATE DATABASE financial_data;
+-- CREATE DATABASE financial_data;
 
 USE financial_data;
 
@@ -57,8 +57,8 @@ CREATE TABLE BalanceSheet (
 );
 
 ALTER TABLE BalanceSheet
-ADD COLUMN stock_id INT,
-ADD COLUMN date DATE,
+# ADD COLUMN stock_id INT,
+# ADD COLUMN date DATE,
 ADD CONSTRAINT fk_stock_id FOREIGN KEY (stock_id) REFERENCES company_info(company_id);
 
 CREATE TABLE CashFlow (
@@ -88,7 +88,7 @@ CREATE TABLE CashFlow (
     income_tax_paid DECIMAL(15, 2),
 
     -- Foreign key constraint (if stock_id references another table)
-    FOREIGN KEY (stock_id) REFERENCES company_info(company_id);
+    FOREIGN KEY (stock_id) REFERENCES company_info(company_id)
 );
 
 SELECT * From CashFlow;
