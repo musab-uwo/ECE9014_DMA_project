@@ -21,7 +21,7 @@ def add_company_info(ticker, company_id):
         info.get("longName"),
         info.get("sector"),
         info.get("industry"),
-        info.get("country"), 
+        info.get("country"),
         info.get("website")
     )
 
@@ -52,8 +52,7 @@ def add_income_statement(ticker, company_id):
             print(f"Skipping invalid date: {date_index}")
             continue
         else:
-            #end_date = end_date.date()
-            end_date = end_date.strftime('%Y-%m-%d') 
+            end_date = end_date.date() 
 
         fields = ['company_id', 'end_date']
         values = [company_id, end_date]
@@ -75,8 +74,7 @@ def add_income_statement(ticker, company_id):
 
 def insert_stock_price(stock_id, stock_data):
     for date, row in stock_data.iterrows():
-        #date = date.to_pydatetime()
-        date = date.strftime('%Y-%m-%d')
+        date = date.to_pydatetime()
         cursor.execute("""
         INSERT INTO StockPrices (stock_id, date, open_price, close_price, high_price, low_price, volume)
         VALUES (%s, %s, %s, %s, %s, %s, %s)
@@ -266,7 +264,7 @@ def main():
     cash_flow_data = ticker.cash_flow.T
     cash_flow_data = cash_flow_data.to_dict(orient="index")
 
-    #insert_dividends_data(symbol,company_id)
+    insert_dividends_data(symbol,company_id)
     insert_stock_price(stock_id, stock_data)
     print("Stock Price inserted")
     insert_balance_sheet(stock_id, balance_sheet_data)
