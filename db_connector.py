@@ -10,7 +10,7 @@ def create_connection():
         host=os.getenv('HOST'),  
         user=os.getenv('USERNAME'),     
         password=os.getenv('PASSWORD'), 
-        database=os.getenv('DBNAME')
+        database=os.getenv('DBNAME'),
         port = os.getenv('PORT')
     )
     return connection
