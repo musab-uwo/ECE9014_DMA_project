@@ -75,12 +75,10 @@ CREATE TABLE dividends_data (
 );
 
 
--- DROP TABLE earnings_data; 
 
 SELECT * FROM company_info;
 SELECT * FROM dividends_data;
 SELECT * FROM income_statement;
 
--- TRUNCATE table earnings_data;
--- TRUNCATE table income_statement;
+
 
