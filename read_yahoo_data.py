@@ -250,7 +250,7 @@ def main():
     symbol = "AAPL" # Company Name 
     ticker = yf.Ticker(symbol)
     company_id = add_company_info(symbol, None)
-    stock_data = ticker.history(start="2020-01-01", end="2023-01-01")
+    stock_data = ticker.history(start="2020-01-01", end="2024-01-01")
     stock_id = add_company_info(symbol, None)\
     
     # Add Income Statement
